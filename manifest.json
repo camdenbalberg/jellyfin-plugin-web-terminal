@@ -1,0 +1,28 @@
+[
+  {
+    "guid": "256a2512-89aa-43f5-bbc1-2157a5647c3a",
+    "name": "Web Terminal",
+    "description": "A Jellyfin plugin that provides a web-based terminal interface for executing commands on the server through the admin panel.",
+    "overview": "Web-based terminal for remote command execution",
+    "owner": "Camden",
+    "category": "General",
+    "versions": [
+      {
+        "version": "2.0.0.0",
+        "changelog": "Add web terminal with command execution API",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/camdenbalberg/jf-5d8ra1l7/releases/download/v2.0.0/web-terminal-2.0.0.0.zip",
+        "checksum": "071caae7dbc000ccfe960fbc78d95739",
+        "timestamp": "2026-03-10T00:00:00Z"
+      },
+      {
+        "version": "1.0.0.0",
+        "changelog": "Initial release",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/camdenbalberg/jf-5d8ra1l7/releases/download/v1.0.0/hello-world-1.0.0.0.zip",
+        "checksum": "56abc3e7107efb806f32af13d6259369",
+        "timestamp": "2026-03-10T00:00:00Z"
+      }
+    ]
+  }
+]

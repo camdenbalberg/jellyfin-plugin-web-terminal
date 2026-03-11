@@ -1,14 +1,14 @@
-name: "Hello World"
+name: "Web Terminal"
 guid: "256a2512-89aa-43f5-bbc1-2157a5647c3a"
-version: "1.0.0.0"
+version: "2.0.0.0"
 targetAbi: "10.11.0.0"
 framework: "net9.0"
-overview: "A minimal Hello World plugin for Jellyfin"
+overview: "Web-based terminal for remote command execution"
 description: >
-  A barebones Jellyfin plugin that demonstrates the minimum required
-  structure for Jellyfin to recognize and load a plugin.
+  A Jellyfin plugin that provides a web-based terminal interface
+  for executing commands on the server through the admin panel.
 category: "General"
 owner: "Camden"
 artifacts:
   - "Jellyfin.Plugin.HelloWorld.dll"
-changelog: "Initial release"
+changelog: "Add web terminal with command execution API"

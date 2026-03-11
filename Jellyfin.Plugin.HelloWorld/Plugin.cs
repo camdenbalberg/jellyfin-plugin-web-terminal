@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
+using Jellyfin.Plugin.HelloWorld.Configuration;
 using MediaBrowser.Common.Configuration;
 using MediaBrowser.Common.Plugins;
+using MediaBrowser.Model.Plugins;
 using MediaBrowser.Model.Serialization;
-using Jellyfin.Plugin.HelloWorld.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace Jellyfin.Plugin.HelloWorld;
@@ -10,7 +12,7 @@ namespace Jellyfin.Plugin.HelloWorld;
 /// <summary>
 /// The main plugin entry point.
 /// </summary>
-public class Plugin : BasePlugin<PluginConfiguration>
+public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
 {
     private readonly ILogger<Plugin> _logger;
 
@@ -25,11 +27,11 @@ public class Plugin : BasePlugin<PluginConfiguration>
     {
         Instance = this;
         _logger = logger;
-        _logger.LogInformation("HelloWorld plugin loaded!");
+        _logger.LogInformation("Web Terminal plugin loaded!");
     }
 
     /// <inheritdoc />
-    public override string Name => "Hello World";
+    public override string Name => "Web Terminal";
 
     /// <inheritdoc />
     public override Guid Id => Guid.Parse("256a2512-89aa-43f5-bbc1-2157a5647c3a");
@@ -38,4 +40,25 @@ public class Plugin : BasePlugin<PluginConfiguration>
     /// Gets the current plugin instance.
     /// </summary>
     public static Plugin? Instance { get; private set; }
+
+    /// <inheritdoc />
+    public IEnumerable<PluginPageInfo> GetPages()
+    {
+        var prefix = GetType().Namespace;
+
+        return new[]
+        {
+            new PluginPageInfo
+            {
+                Name = "web_terminal",
+                EmbeddedResourcePath = prefix + ".Pages.terminal.html",
+                EnableInMainMenu = true
+            },
+            new PluginPageInfo
+            {
+                Name = "web_terminal.js",
+                EmbeddedResourcePath = prefix + ".Pages.terminal.js"
+            }
+        };
+    }
 }
