@@ -12,11 +12,23 @@ public class PluginConfiguration : BasePluginConfiguration
     /// </summary>
     public PluginConfiguration()
     {
-        Greeting = "Hello from Jellyfin!";
+        ShellPath = "cmd.exe";
+        ShellArgs = "/c";
+        CommandTimeoutSeconds = 30;
     }
 
     /// <summary>
-    /// Gets or sets the greeting message.
+    /// Gets or sets the shell executable path.
     /// </summary>
-    public string Greeting { get; set; }
+    public string ShellPath { get; set; }
+
+    /// <summary>
+    /// Gets or sets the shell arguments prefix.
+    /// </summary>
+    public string ShellArgs { get; set; }
+
+    /// <summary>
+    /// Gets or sets the command timeout in seconds.
+    /// </summary>
+    public int CommandTimeoutSeconds { get; set; }
 }
