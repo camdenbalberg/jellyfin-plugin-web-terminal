@@ -11,5 +11,5 @@ description: >
 category: "General"
 owner: "camdenbalberg"
 artifacts:
-  - "Jellyfin.Plugin.HelloWorld.dll"
+  - "Jellyfin.Plugin.WebTerminal.dll"
 changelog: "Add API key authentication, config page, public release"

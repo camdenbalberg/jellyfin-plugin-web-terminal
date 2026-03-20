@@ -2,7 +2,7 @@ using System;
 using System.Security.Cryptography;
 using MediaBrowser.Model.Plugins;
 
-namespace Jellyfin.Plugin.HelloWorld.Configuration;
+namespace Jellyfin.Plugin.WebTerminal.Configuration;
 
 /// <summary>
 /// Plugin configuration.

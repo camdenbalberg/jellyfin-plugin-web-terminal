@@ -54,7 +54,7 @@ This plugin uses **two layers of authentication**:
 Requires .NET 9 SDK.
 
 ```bash
-dotnet publish Jellyfin.Plugin.HelloWorld --configuration Release --output bin/publish
+dotnet publish Jellyfin.Plugin.WebTerminal --configuration Release --output bin/publish
 ```
 
 The output DLL can be placed in your Jellyfin plugins directory, or packaged as a `.zip` for repository distribution.

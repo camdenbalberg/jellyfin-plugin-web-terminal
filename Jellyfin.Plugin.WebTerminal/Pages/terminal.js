@@ -37,7 +37,7 @@ export default function (view) {
     }
 
     function validateKey(key) {
-        var url = window.ApiClient.getUrl('HelloWorld/ValidateKey');
+        var url = window.ApiClient.getUrl('WebTerminal/ValidateKey');
         return fetch(url, {
             method: 'POST',
             headers: {
@@ -82,7 +82,7 @@ export default function (view) {
     function cancelCommand() {
         if (!running || !currentSessionId) return;
 
-        var url = window.ApiClient.getUrl('HelloWorld/Cancel');
+        var url = window.ApiClient.getUrl('WebTerminal/Cancel');
         fetch(url, {
             method: 'POST',
             headers: getAuthHeaders(),
@@ -100,7 +100,7 @@ export default function (view) {
             escapeHtml(command) + '</span></div>'
         );
 
-        var url = window.ApiClient.getUrl('HelloWorld/Execute');
+        var url = window.ApiClient.getUrl('WebTerminal/Execute');
         var payload = JSON.stringify({
             command: command,
             workingDirectory: cwdInput.value || 'C:\\'

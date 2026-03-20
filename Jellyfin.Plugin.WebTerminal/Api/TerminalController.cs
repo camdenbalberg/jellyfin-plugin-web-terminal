@@ -11,14 +11,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Jellyfin.Plugin.HelloWorld.Api;
+namespace Jellyfin.Plugin.WebTerminal.Api;
 
 /// <summary>
 /// API controller for remote terminal execution.
 /// </summary>
 [ApiController]
 [Authorize(Policy = Policies.RequiresElevation)]
-[Route("HelloWorld")]
+[Route("WebTerminal")]
 public class TerminalController : ControllerBase
 {
     private static readonly ConcurrentDictionary<string, (Process Process, CancellationTokenSource Cts)> _running = new();

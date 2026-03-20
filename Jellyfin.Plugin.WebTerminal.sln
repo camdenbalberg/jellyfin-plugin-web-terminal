@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jellyfin.Plugin.HelloWorld", "Jellyfin.Plugin.HelloWorld\Jellyfin.Plugin.HelloWorld.csproj", "{256A2512-89AA-43F5-BBC1-2157A5647C3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jellyfin.Plugin.WebTerminal", "Jellyfin.Plugin.WebTerminal\Jellyfin.Plugin.WebTerminal.csproj", "{256A2512-89AA-43F5-BBC1-2157A5647C3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

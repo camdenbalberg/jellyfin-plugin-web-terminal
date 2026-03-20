@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
-using Jellyfin.Plugin.HelloWorld.Configuration;
+using Jellyfin.Plugin.WebTerminal.Configuration;
 using MediaBrowser.Common.Configuration;
 using MediaBrowser.Common.Plugins;
 using MediaBrowser.Model.Plugins;
 using MediaBrowser.Model.Serialization;
 using Microsoft.Extensions.Logging;
 
-namespace Jellyfin.Plugin.HelloWorld;
+namespace Jellyfin.Plugin.WebTerminal;
 
 /// <summary>
 /// The main plugin entry point.

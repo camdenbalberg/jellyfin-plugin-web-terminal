@@ -11,8 +11,8 @@
         "version": "3.0.0.0",
         "changelog": "Add API key authentication, config page, public release",
         "targetAbi": "10.11.0.0",
-        "sourceUrl": "https://github.com/camdenbalberg/jellyfin-plugin-web-terminal/releases/download/v3.0.0/web-terminal-3.0.0.0.zip",
-        "checksum": "35f9db9ce3350918b2ccc1618ccee1ba",
+        "sourceUrl": "https://github.com/camdenbalberg/jellyfin-plugin-web-terminal/releases/download/v3.0.0/Jellyfin.Plugin.WebTerminal.zip",
+        "checksum": "f80fd60c6a5befa5316e163669d232ce",
         "timestamp": "2026-03-20T00:00:00Z"
       }
     ]
