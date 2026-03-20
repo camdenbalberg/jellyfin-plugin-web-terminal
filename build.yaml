@@ -1,14 +1,15 @@
 name: "Web Terminal"
 guid: "256a2512-89aa-43f5-bbc1-2157a5647c3a"
-version: "2.0.0.0"
+version: "3.0.0.0"
 targetAbi: "10.11.0.0"
 framework: "net9.0"
-overview: "Web-based terminal for remote command execution"
+overview: "Web-based terminal for remote command execution with API key auth"
 description: >
-  A Jellyfin plugin that provides a web-based terminal interface
-  for executing commands on the server through the admin panel.
+  A Jellyfin plugin that provides a web-based terminal interface for executing
+  commands on the server through the admin panel. Includes two-layer authentication
+  (Jellyfin admin + API key), real-time streaming output, and Ctrl+C cancellation.
 category: "General"
-owner: "Camden"
+owner: "camdenbalberg"
 artifacts:
   - "Jellyfin.Plugin.HelloWorld.dll"
-changelog: "Add web terminal with command execution API"
+changelog: "Add API key authentication, config page, public release"

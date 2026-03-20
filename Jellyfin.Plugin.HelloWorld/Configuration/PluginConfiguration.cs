@@ -1,3 +1,5 @@
+using System;
+using System.Security.Cryptography;
 using MediaBrowser.Model.Plugins;
 
 namespace Jellyfin.Plugin.HelloWorld.Configuration;
@@ -14,7 +16,8 @@ public class PluginConfiguration : BasePluginConfiguration
     {
         ShellPath = "cmd.exe";
         ShellArgs = "/c";
-        CommandTimeoutSeconds = 30;
+        CommandTimeoutSeconds = 300;
+        ApiKey = string.Empty;
     }
 
     /// <summary>
@@ -31,4 +34,18 @@ public class PluginConfiguration : BasePluginConfiguration
     /// Gets or sets the command timeout in seconds.
     /// </summary>
     public int CommandTimeoutSeconds { get; set; }
+
+    /// <summary>
+    /// Gets or sets the API key for terminal access.
+    /// </summary>
+    public string ApiKey { get; set; }
+
+    /// <summary>
+    /// Generates a new random API key.
+    /// </summary>
+    public static string GenerateApiKey()
+    {
+        var bytes = RandomNumberGenerator.GetBytes(24);
+        return Convert.ToBase64String(bytes).Replace("+", "").Replace("/", "").Replace("=", "")[..32];
+    }
 }
