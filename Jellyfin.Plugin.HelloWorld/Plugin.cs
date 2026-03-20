@@ -27,6 +27,14 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
     {
         Instance = this;
         _logger = logger;
+
+        if (string.IsNullOrEmpty(Configuration.ApiKey))
+        {
+            Configuration.ApiKey = PluginConfiguration.GenerateApiKey();
+            SaveConfiguration();
+            _logger.LogWarning("Web Terminal: Generated new API key. Configure it in plugin settings.");
+        }
+
         _logger.LogInformation("Web Terminal plugin loaded!");
     }
 
@@ -58,6 +66,16 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
             {
                 Name = "web_terminal.js",
                 EmbeddedResourcePath = prefix + ".Pages.terminal.js"
+            },
+            new PluginPageInfo
+            {
+                Name = Name,
+                EmbeddedResourcePath = prefix + ".Pages.config.html"
+            },
+            new PluginPageInfo
+            {
+                Name = Name + ".js",
+                EmbeddedResourcePath = prefix + ".Pages.config.js"
             }
         };
     }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Web Terminal</title>
+</head>
+<body>
+    <div id="WebTerminalConfigPage" data-role="page"
+         class="page type-interior pluginConfigurationPage"
+         data-require="emby-input,emby-button,emby-checkbox">
+        <div data-role="content">
+            <div class="content-primary">
+                <h2>Web Terminal Settings</h2>
+
+                <div style="background: #442222; border: 1px solid #cc6666; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+                    <p style="color: #cc6666; font-weight: bold; margin: 0 0 8px 0;">Security Warning</p>
+                    <p style="color: #d4d4d4; margin: 0; font-size: 14px;">
+                        This plugin allows executing arbitrary commands on the server with the privileges of the Jellyfin service account.
+                        Keep the API key secret and only share it with trusted administrators.
+                    </p>
+                </div>
+
+                <form id="WebTerminalConfigForm">
+                    <div class="inputContainer" style="margin-bottom: 16px;">
+                        <label class="inputLabel inputLabelUnfocused" for="txtApiKey">API Key</label>
+                        <div style="display: flex; gap: 8px; align-items: center;">
+                            <input id="txtApiKey" name="ApiKey" type="password" is="emby-input" style="flex: 1;" readonly />
+                            <button id="btnToggleKey" type="button" is="emby-button" class="raised" style="white-space: nowrap;">Show</button>
+                            <button id="btnRegenKey" type="button" is="emby-button" class="raised" style="white-space: nowrap;">Regenerate</button>
+                        </div>
+                        <div class="fieldDescription">
+                            Required to access the terminal. Auto-generated on first install. Share this with trusted admins only.
+                        </div>
+                    </div>
+
+                    <div class="inputContainer" style="margin-bottom: 16px;">
+                        <label class="inputLabel inputLabelUnfocused" for="txtShellPath">Shell Path</label>
+                        <input id="txtShellPath" name="ShellPath" type="text" is="emby-input" />
+                        <div class="fieldDescription">Path to the shell executable (e.g., cmd.exe, powershell.exe, /bin/bash).</div>
+                    </div>
+
+                    <div class="inputContainer" style="margin-bottom: 16px;">
+                        <label class="inputLabel inputLabelUnfocused" for="txtShellArgs">Shell Arguments</label>
+                        <input id="txtShellArgs" name="ShellArgs" type="text" is="emby-input" />
+                        <div class="fieldDescription">Arguments passed before the command (e.g., /c for cmd.exe, -Command for powershell.exe).</div>
+                    </div>
+
+                    <div class="inputContainer" style="margin-bottom: 24px;">
+                        <label class="inputLabel inputLabelUnfocused" for="txtTimeout">Command Timeout (seconds)</label>
+                        <input id="txtTimeout" name="CommandTimeoutSeconds" type="number" is="emby-input" min="10" max="3600" />
+                        <div class="fieldDescription">Maximum time a command can run before being terminated.</div>
+                    </div>
+
+                    <div>
+                        <button is="emby-button" type="submit" class="raised button-submit block emby-button">
+                            <span>Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="configurationpage?name=Web Terminal.js"></script>
+    </div>
+</body>
+</html>
